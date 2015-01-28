@@ -25,19 +25,13 @@ int main ()
       cin >> guess;
       while (guess > 1 && guess != random)
       {
-        if (chance == 0)
+      if (chance == 0)
         {
             cout << "Sorry, but you ran out of tries. If you want to, we can play again.\n";
             system("PAUSE");
             return 0;
         }
-        else if (guess == random)
-        {
-          cout << "Congratulations! You guessed my number!\n";
-          system("PAUSE");
-          return 0;
-        }
-      else if (guess > random)
+      if (guess > random)
         {
           cout << "Chances left: " << chance<< "  You're number is too high!\n";
           cin >> guess;
@@ -49,9 +43,15 @@ int main ()
           cin >> guess;
           chance--;
         }
+        cout << endl;
     }
-
     }
+        if (guess == random)
+        {
+          cout << "Congratulations! You guessed my number!\n";
+          system("PAUSE");
+          return 0;
+        }
     else if (response == "Nah" || response == "nah" || response == "no" || response == "No" || response == "Nope" || response == "nope")
     {
       cout << "Aw that sucks, maybe next time.\n";
